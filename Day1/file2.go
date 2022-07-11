@@ -59,15 +59,15 @@ func print(w io.Writer, node *TreeNode, ns int, ch rune) {
 
 func main() {
 	tree := &Tree{}
-	tree.insert(100).
-		insert(-20).
-		insert(-9).
-		insert(-5).
-		insert(-1).
-		insert(44).
-		insert(6).
-		insert(42).
-		insert(35).
-		insert(5).
-		print(os.Stdout, tree.root, 0, 'M')
+	tree.insert(100)
+	tree.insert(-20)
+	tree.insert(-9)
+	tree.insert(-5)
+	tree.insert(-1)
+	tree.insert(44)
+	tree.insert(6)
+	tree.insert(42)
+	tree.insert(35)
+	tree.insert(5)
+	print(os.Stdout, tree.root, 0, 'M')
 }
