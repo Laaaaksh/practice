@@ -1,4 +1,9 @@
-// Question 1
+package Day1
+import (
+	"fmt"
+	"log"
+)
+
 package main
 
 import (
@@ -10,7 +15,7 @@ import (
 type matrix struct {
 	rows int
 	columns int
-	ele [3][3] int
+	ele [][] int
 
 }
 
