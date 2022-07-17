@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fee0168-f5d1-42c8-b257-6305a8c36369" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Day1/file1.go" beforeDir="false" afterPath="$PROJECT_DIR$/Day1/file1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day1/file2.go" beforeDir="false" afterPath="$PROJECT_DIR$/Day1/file2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day1/file3.go" beforeDir="false" afterPath="$PROJECT_DIR$/Day1/file3.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day2/file1.go" beforeDir="false" afterPath="$PROJECT_DIR$/Day2/file1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Day2/file3.go" beforeDir="false" afterPath="$PROJECT_DIR$/Day2/file3.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day3/Config/Database.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day3/Controllers/User.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day3/Models/User.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day3/Models/UserModel.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day3/Routes/Routes.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day3/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day3/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day3/main.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

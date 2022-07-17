@@ -17,6 +17,7 @@ func Withdrawl(bal *int, sub int) {
 		*bal = *bal - sub
 	}
 }
+// Use of mutex
 func main() {
 	fmt.Println("Question 3")
 	bal := 500
