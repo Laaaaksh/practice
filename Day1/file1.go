@@ -1,9 +1,3 @@
-package Day1
-import (
-	"fmt"
-	"log"
-)
-
 package main
 
 import (
@@ -12,63 +6,58 @@ import (
 	"log"
 )
 
-type matrix struct {
-	rows int
-	columns int
-	ele [][] int
-
+type Matrix struct {
+	rows    int `json:"rows"`
+	columns int `json:"columns"`
+	ele     [][]int `json:"ele"`
 }
-
-func (r * matrix) getRows() int{
+// Get rows
+func (r *Matrix) getRows() int {
 	return r.rows
 }
-func (r * matrix) getColumn() int{
+// Get columns
+func (r *Matrix) getColumn() int {
 	return r.columns
 }
-func (r * matrix) setEle(){
-	row:= r.rows
-	col:=r.columns
-	arr:=r.ele // declared an empty 2d array
-	for i:=0; i<row; i++{
-		for j:=0 ; j < col; j++{
-			fmt.Print(arr[i][j], " ") // assigned values to it
-		}
-		fmt.Print("\n")
-	}
-}
-func (r *matrix) addMatrix(){
-	row:= r.rows
-	col:=r.columns
-	arr:=r.ele
-	var mat = [3][3]int{{1,1,1},{1,1,1},{1,1,1}}
-	for i:=0; i<row; i++{
-		for j:=0 ; j < col; j++{
-			arr[i][j] = arr[i][j] + mat[i][j]
+// Set values in matrix
+func (r *Matrix) setEle(val int) {
+	row := r.rows
+	col := r.columns
+	for i := 0; i < row; i++ {
+		for j := 0; j < col; j++ {
+			r.ele[i][j] = val
 		}
 	}
-	tempFunc := matrix{3,3,arr}
-	tempFunc.setEle()
 }
-// Unable to print array as json
-func (r * matrix) printJson(){
-	arr:=r.ele
-	convArr, err:= json.Marshal(arr)
-	if err == nil{
-		log.Fatal(err)
+// Add matrix
+func (r *Matrix) addMatrix(mat [][]int) {
+	row := r.rows
+	col := r.columns
+	for i := 0; i < row; i++ {
+		for j := 0; j < col; j++ {
+			r.ele[i][j] = r.ele[i][j] + mat[i][j]
+		}
 	}
-	fmt.Println(convArr)
+}
+
+// Print Json Matrix
+func (r *Matrix) printJson() {
+	val, err := json.Marshal(r.ele)
+	if err!=nil {
+		log.Default()
+	}
+	fmt.Println(string(val))
 
 }
-func main()  {
-	fmt.Println("Five Functions")
-	var one= [3][3] int {{1,2,3},{4,5,6},{7,8,9}}
-	var emptyArr= [3][3] int{}
-	firstFunc := matrix{3,3, emptyArr}
-	secondFunc := matrix{3,3, one}
-	fmt.Println(firstFunc.rows)
-	fmt.Println(firstFunc.columns)
-	secondFunc.setEle()
-	fmt.Print("\n")
-	secondFunc.addMatrix()
-	secondFunc.printJson()
+func main() {
+	var one Matrix
+	one.rows = 3
+	one.columns = 3
+	one.ele = [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+	//var mat = [][]int{{1, 1, 1}, {1, 1, 1}, {1, 1, 1}} // here declare the type of matrix you wanna add
+	//one.setEle(5)
+	//one.addMatrix(mat)
+	one.printJson()
+
+
 }

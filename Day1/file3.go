@@ -7,16 +7,16 @@ type salary interface {
 }
 type employee struct {
 	daysWorked int
-	wage int
+	wage       int
 }
 
 func (e employee) calCi() int {
 	return e.daysWorked * e.wage
 }
-func calculate(i salary){
+func calculate(i salary) {
 	println(i.calCi())
 }
-func main(){
+func main() {
 	fmt.Println("Third question")
 	fullTime := employee{23, 500}
 	conTract := employee{24, 100}

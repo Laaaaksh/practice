@@ -2,32 +2,28 @@ package main
 
 import (
 	"fmt"
-	"strings"
 	"sync"
 )
-func calculate(string2 string){
-	fmt.Println(string2)
-	for _,val := range string2{
-		ch :=strings.Count(string2,string(val))
-		fmt.Println(string(val), " - ", ch)
+
+var m = sync.Mutex{}
+var wg = sync.WaitGroup{}
+var f = make(map[string]int, 26)
+
+func countFrequency(word string) {
+	m.Lock()
+	for i := 0; i < len(word); i++ {
+		f[string(word[i])] += 1
 	}
+	m.Unlock()
+	wg.Done()
 }
 
-func process(i string, vr * sync.WaitGroup, ms *sync.Mutex) {
-	ms.Lock()
-	calculate(i)
-	ms.Unlock()
-	vr.Done()
-}
-func main(){
-	fmt.Println("Question one")
-	str := []string{"Hi", "hey", "laksh", "ball", "razorpay"}
-	var ch sync.WaitGroup
-	var ms sync.Mutex
-	for _,bt := range str {
-		ch.Add(1)
-		go process(bt, &ch, &ms)
+func main() {
+	strings := []string{"quick", "brown", "fox", "lazy", "dog"}
+	for j := range strings {
+		wg.Add(1)
+		go countFrequency(strings[j])
 	}
-	ch.Wait()
-	fmt.Println("Printed count of alphabets in all the strings")
+	wg.Wait()
+	fmt.Println(f)
 }

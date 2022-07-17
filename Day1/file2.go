@@ -1,5 +1,3 @@
-// Question 2
-
 package main
 
 import (
@@ -18,6 +16,7 @@ type Tree struct {
 	root *TreeNode
 }
 
+// Insert Node
 func (t *Tree) insert(data int) *Tree {
 	if t.root == nil {
 		t.root = &TreeNode{data: data, left: nil, right: nil}
@@ -26,6 +25,8 @@ func (t *Tree) insert(data int) *Tree {
 	}
 	return t
 }
+
+// Insert data into tree
 func (n *TreeNode) insert(data int) {
 	if n == nil {
 		return
@@ -43,7 +44,7 @@ func (n *TreeNode) insert(data int) {
 		}
 	}
 }
-
+// Print the tree
 func print(w io.Writer, node *TreeNode, ns int, ch rune) {
 	if node == nil {
 		return
@@ -57,6 +58,7 @@ func print(w io.Writer, node *TreeNode, ns int, ch rune) {
 	print(w, node.right, ns+2, 'R')
 }
 
+// Main function
 func main() {
 	tree := &Tree{}
 	tree.insert(100)
