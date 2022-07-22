@@ -26,4 +26,5 @@ func main() {
 	}
 	wg.Wait()
 	fmt.Println(f)
+	// checking
 }
